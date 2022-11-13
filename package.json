@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "babel ./src -d ./dist",
-    "start": "node --exec npx babel-node ./src/bin/www.js",
+    "start": "./node_modules/babel/bin/babel-node.js index",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
