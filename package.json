@@ -4,12 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "devstart": "babel-node ./src/bin/www",
-    "start": "npm run build && node ./build/bin/www",
-    "build": "npm run clean && npm run babel-build",
-    "babel-build": "babel -d ./build ./src -s",
-    "clean": "mkdir build",
-    "heroku-postbuild": "npm install && npm run build",
+    "build": "babel ./src -d ./dist",
+    "start": "nodemon --exec babel-node ./src/bin/www.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
