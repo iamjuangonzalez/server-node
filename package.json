@@ -4,11 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "heroku-postbuild": "npm run build",
-    "build": "babel ./src -d ./dist",
-    "start": "npm run build && nodemon dist/app",
-    "serve": "node dist/bin/www.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "clean": "rm -rf build && mkdir build",
+    "build-babel": "babel -d ./build ./src -s",
+    "build": "npm run clean && npm run build-babel",
+    "start": "npm run build && node ./build/index.js"
   },
   "keywords": [],
   "author": "",
