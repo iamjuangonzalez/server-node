@@ -1,7 +1,7 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "description": "",
+  "description": "Server de prueba",
   "main": "index.js",
   "scripts": {
     "build": "babel ./src -d ./dist",
