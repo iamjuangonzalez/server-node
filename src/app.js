@@ -1,11 +1,11 @@
 "use strict";
 
-import express from "express";
-import session from "express-session";
-import cookieParser from "cookie-parser";
-import cors from "cors";
-import indexRouter from "./routes";
-import dbConnect from "./config/config";
+const express = require("express");
+const session = require("express-session");
+const cookieParser = require("cookie-parser");
+const cors = require("cors");
+const indexRouter = require("./routes");
+const dbConnect = require("./config/config");
 
 const app = express();
 
@@ -39,4 +39,4 @@ app.use(cookieParser());
 
 app.use("/api/v1", indexRouter);
 
-export default app;
+module.exports = app;

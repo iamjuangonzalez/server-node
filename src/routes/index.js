@@ -1,9 +1,11 @@
 "use strict";
 
-import express from "express";
-import { estateModel } from "../models";
+const express = require("express");
+console.log("ASD");
+const { estateModel } = require("../models");
+console.log("AS123D");
 
-const app = express();
+const app = express.Router();
 
 app.post("/addEstate", function (req, res, next) {
   try {
@@ -116,4 +118,4 @@ app.get("/getEstate", async function (req, res, next) {
   }
 });
 
-export default app;
+module.exports = app;
