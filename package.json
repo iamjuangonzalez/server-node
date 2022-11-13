@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "heroku-postbuild": "npm run build",
     "build": "babel ./src -d ./dist",
     "start": "npm run build && nodemon dist/app",
     "serve": "node dist/bin/www.js",
