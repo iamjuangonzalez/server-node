@@ -5,15 +5,13 @@
   "main": "index.js",
   "scripts": {
     "build": "babel ./src -d ./dist",
-    "start": "nodemon --exec babel-node ./src/bin/www.js",
+    "start": "npm run build && node dist/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@babel/cli": "^7.19.3",
-    "@babel/preset-env": "^7.20.2",
     "async": "^3.2.4",
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
