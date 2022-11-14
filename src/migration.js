@@ -12,19 +12,12 @@ dbConnect().then(async (res) => {
 async function migrateEstate() {
   let count = 0;
   async.eachSeries(data, (item, cb_item) => {
-    let geolat = `${item.geo_lat.slice(0, 2)}.${item.geo_lat.slice(
-      2,
-      5
-    )}.${item.geo_lat.slice(5, 8)}`;
-    let geolng = `${item.geo_lng.slice(0, 3)}.${item.geo_lng.slice(
-      3,
-      6
-    )}.${item.geo_lng.slice(6, 9)}`;
-    item = {
-      ...item,
-      geo_lat: geolat,
-      geo_lng: geolng,
-    };
+    console.log(parseInt(item.geo_lat))
+    let geolat = `${item.geo_lat.slice(0, 2)}.${item.geo_lat.slice(2,5)}.${item.geo_lat.slice(5, 8)}`;
+    let geolng = `${item.geo_lng.slice(0, 3)}.${item.geo_lng.slice(3,6)}.${item.geo_lng.slice(6, 9)}`;
+
+    item = {...item,geo_lat: geolat, geo_lng: geolng};
+    return;
     estateModel(item)
       .save()
       .then((res) => {
